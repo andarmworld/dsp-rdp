@@ -1,0 +1,6 @@
+node_modules/
+gateway/.env
+gateway/initdb.sql
+dist/
+.deployment/
+.debug-journal.md
