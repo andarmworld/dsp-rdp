@@ -12,6 +12,14 @@
 
 旧版浏览器入口仍保留在原存储中。同站点连接 ID 匹配服务器导入机器后使用服务器配置；未匹配或外部入口列于“旧版浏览器入口”，可单独打开。
 
+## 界面预览
+
+下图来自真实面板组件的本地预览，使用模拟 RPC 与通用示例数据，展示机器表单、列表及连接历史入口；截图不连接远程机器，也不表示已完成真实远程桌面登录验收。
+
+![多机器远程桌面面板的本地界面预览](docs/images/panel-preview.png)
+
+[查看 375px 窄屏预览](docs/images/panel-preview-mobile.png)
+
 ## 构建与安装
 
 GitHub 仓库：<https://github.com/andarmworld/dsp-rdp>。通过以下命令安装到 DSH Web profile：
