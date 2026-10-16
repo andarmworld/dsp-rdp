@@ -1,6 +1,7 @@
 {
   "name": "dsp-rdp",
   "version": "0.2.3",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "description": "Multi-machine RDP launcher for the dsh Web UI",
