@@ -1,5 +1,7 @@
 # dsp-rdp：DSH 多机器远程桌面插件
 
+**简体中文** | [English](https://github.com/andarmworld/dsp-rdp/blob/main/README.en.md)
+
 适配 dsh Web `0.2.0-rc.2`，通过 Apache Guacamole `1.6.0` 提供多机器远程桌面。`0.2.0` 的机器配置与完整连接记录保存在本 DSH 实例；不同浏览器访问同一实例时使用相同记录。
 
 表单依次为机器名称、Windows 登录名、密码、连接地址、连接和添加机器。连接地址填写主机名、IPv4 或方括号 IPv6，以及可选端口（默认 3389），例如 `192.168.1.10:3389`。添加只保存配置；连接保存配置后打开网关。密码可留空，在网关的 NLA 登录界面手动输入。只有勾选“在服务器加密记住密码”才会持久保存密码；在已有机器中取消勾选并保存可清除已记住的密码。
@@ -22,9 +24,15 @@
 
 ## 构建与安装
 
-已补齐 npm 发布配置。发布成功后可通过 `dsh plugin --profile web add dsp-rdp` 一键安装；实际发布与插件中心展示状态须分别核实。维护者流程见 [npm 发布说明](docs/npm-release.md)。
+`dsp-rdp` 已发布到 [npm](https://www.npmjs.com/package/dsp-rdp)，可通过以下命令安装到 DSH Web profile：
 
-GitHub 仓库：<https://github.com/andarmworld/dsp-rdp>。通过以下命令安装到 DSH Web profile：
+```bash
+dsh plugin --profile web add dsp-rdp
+```
+
+应用内插件中心的展示仍取决于社区目录扫描；npm 发布成功不代表商城已同步。维护者流程见 [npm 发布说明](docs/npm-release.md)。
+
+也可从 [GitHub 仓库](https://github.com/andarmworld/dsp-rdp)安装源码版本：
 
 ```bash
 dsh plugin --profile web add github:andarmworld/dsp-rdp

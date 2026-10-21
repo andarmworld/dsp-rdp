@@ -1,17 +1,17 @@
 # npm 发布与插件中心收录
 
 包名为 `dsp-rdp`，发布目标为公共 npm registry：`https://registry.npmjs.org/`。
-`0.2.4` 补齐 npm 发布配置；配置完成不代表包已发布或插件中心已展示。
+`0.2.4` 已发布到 npm，并验证公开下载与 DSH 包名安装。后续发布版本按下述流程验证；应用内插件中心是否展示须独立检查。
 
 ## 用户安装
 
-在 npm 发布完成后，可使用：
+从 npm 安装：
 
 ```bash
 dsh plugin --profile web add dsp-rdp
 ```
 
-发布前仍可使用 GitHub 安装方式：
+也可使用 GitHub 源码安装方式：
 
 ```bash
 dsh plugin --profile web add github:andarmworld/dsp-rdp
@@ -31,13 +31,13 @@ dsh plugin --profile web add github:andarmworld/dsp-rdp
    npm pack --pack-destination /absolute/path/to/release-artifacts
    ```
 
-   `prepack` 会重新构建；编译失败时停止打包。检查 tarball 文件清单，再在临时项目中使用 `npm install --omit=dev /absolute/path/to/dsp-rdp-0.2.4.tgz` 验证运行依赖和入口。只打包声明的运行文件、说明、截图及网关模板；不包含网关 `.env`、初始化数据库、密钥或开发依赖。
+   `prepack` 会重新构建；编译失败时停止打包。检查 tarball 文件清单，再在临时项目中使用 `npm install --omit=dev /absolute/path/to/dsp-rdp-0.2.5.tgz` 验证运行依赖和入口。只打包声明的运行文件、说明、截图及网关模板；不包含网关 `.env`、初始化数据库、密钥或开发依赖。
 3. 使用自己的 npm 账号在终端执行 `npm login --registry=https://registry.npmjs.org`，完成浏览器认证。不要将令牌提交到仓库。
 4. 确认发布目标和版本后，发布已验证的同一份 tarball：
 
    ```bash
-   npm publish /absolute/path/to/dsp-rdp-0.2.4.tgz --access public --registry=https://registry.npmjs.org/
-   npm view dsp-rdp@0.2.4 version dist.integrity --registry=https://registry.npmjs.org/
+   npm publish /absolute/path/to/dsp-rdp-0.2.5.tgz --access public --registry=https://registry.npmjs.org/
+   npm view dsp-rdp@0.2.5 version dist.integrity --registry=https://registry.npmjs.org/
    ```
 
    直接从源码执行 `npm publish` 时，`prepublishOnly` 会先执行类型检查和测试，随后 `prepack` 构建。发布 tarball 时不重新执行源码检查，因此必须先完成第 2 步并发布原包。
