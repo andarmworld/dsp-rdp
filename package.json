@@ -1,8 +1,7 @@
 {
   "name": "dsp-rdp",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "description": "Multi-machine RDP launcher for the dsh Web UI",
   "repository": {
@@ -17,7 +16,12 @@
   "files": [
     "lib",
     "server",
-    "cordis.patch.yml"
+    "cordis.patch.yml",
+    "gateway/compose.yaml",
+    "docs/images/panel-preview.png",
+    "docs/images/panel-preview-mobile.png",
+    "docs/npm-release.md",
+    "CHANGELOG.md"
   ],
   "dsh": {
     "bundle": {
@@ -38,7 +42,9 @@
     "build": "node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.mjs",
-    "preview": "node scripts/preview.mjs"
+    "preview": "node scripts/preview.mjs",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run typecheck && npm test"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "4.0.4",
@@ -59,5 +65,23 @@
     "zod": "^4.6.7",
     "@deepseek-ai/dsh-storage-domain": "0.2.0-rc.2",
     "@deepseek-ai/schemastery": "3.18.4"
+  },
+  "homepage": "https://github.com/andarmworld/dsp-rdp#readme",
+  "bugs": {
+    "url": "https://github.com/andarmworld/dsp-rdp/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "rdp",
+    "remote-desktop",
+    "guacamole"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

@@ -22,6 +22,8 @@
 
 ## 构建与安装
 
+已补齐 npm 发布配置。发布成功后可通过 `dsh plugin --profile web add dsp-rdp` 一键安装；实际发布与插件中心展示状态须分别核实。维护者流程见 [npm 发布说明](docs/npm-release.md)。
+
 GitHub 仓库：<https://github.com/andarmworld/dsp-rdp>。通过以下命令安装到 DSH Web profile：
 
 ```bash
